@@ -18,9 +18,10 @@ jobs:
 
     steps:
       # This step checks out a copy of your repository.
-      - uses: actions/checkout@v2
+
       # This step references the directory that contains the action.
       - uses: Hvftk/scf@jd_scripts
+      - uses: actions/checkout@v2        
 
 
       - name: Use Node.js ${{ matrix.node-version }}
