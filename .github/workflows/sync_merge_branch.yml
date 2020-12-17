@@ -2,7 +2,7 @@
 name: 同步合并分支
 on:
   schedule:
-    - cron: '1 0-15/3 * * *'
+    - cron: '0 0-18,21-23 * * *'
   workflow_dispatch:
 jobs:
   merge-branch:
