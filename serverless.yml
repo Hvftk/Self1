@@ -29,8 +29,14 @@ inputs:
         parameters:
           name: jd_bean_sign
           cronExpression: "0 6 0 * * * *"
-          enable: false
-          argument: jd_bean_sign		  
+          enable: true
+          argument: jd_bean_sign
+    - timer: # 京东汽车旅程赛点兑换金豆
+        parameters:
+          name: jd_car_exchange
+          cronExpression: "0 0 0 * * * *"
+          enable: true
+          argument: jd_joy_steal		          
     - timer: # 京喜工厂 
         parameters:
           name: jd_dreamFactory
@@ -142,7 +148,7 @@ inputs:
     - timer: # 宠汪汪偷好友积分与狗
         parameters:
           name: jd_joy_steal
-          cronExpression: "0 0 0-16/8 * * * *"
+          cronExpression: "0 0 0,6 * * * *"
           enable: true
           argument: jd_joy_steal
     - timer: # 京东全民开红包 
