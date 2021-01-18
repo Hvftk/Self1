@@ -14,14 +14,7 @@ jobs:
         with:
           persist-credentials: false
           
-      - name: sync lxk0301-scripts
-        uses: repo-sync/github-sync@v2
-        if: env.PAT
-        with:
-          source_repo: "https://github.com/lxk0301/jd_scripts.git"
-          source_branch: "master"
-          destination_branch: "jd_scripts"
-          github_token: ${{ secrets.PAT }}
+
 
       - name: sync lxk0301-scripts
         uses: repo-sync/github-sync@v2
@@ -30,16 +23,6 @@ jobs:
           source_repo: "https://github.com/LXK9301/jd_scripts.git"
           source_branch: "master"
           destination_branch: "LXK9301"
-          github_token: ${{ secrets.PAT }}
-
-
-      - name: sync lxk0301-scripts
-        uses: repo-sync/github-sync@v2
-        if: env.PAT
-        with:
-          source_repo: "https://github.com/lxk0301/mySelf.git"
-          source_branch: "main"
-          destination_branch: "mySelf"
           github_token: ${{ secrets.PAT }}
 
 
