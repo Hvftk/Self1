@@ -17,7 +17,7 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone -b master https://github.com/LXK9301/jd_scripts.git ~/jd_scripts
+          git clone https://github.com/Hvftk/scf.git ~/scf
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -31,12 +31,13 @@ jobs:
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
       - name: npm install
         run: |
-          cd ~/jd_scripts
+          cd ~/scf
+          git checkout LXK9301              # clone上游仓库 git checkout master,master指的是分支名称
           npm install
-      - name: '运行 【getJDCookie】'
+      - name: '运行 【京东签到】'
         run: |
           cd ~/jd_scripts
-          node getJDCookie.js
+          node jd_bean_change.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
